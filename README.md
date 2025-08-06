@@ -1,5 +1,7 @@
 # Gerador de CPF
 
+---
+
 Este é um simples projeto em Java para a geração de números de CPF (Cadastro de Pessoas Físicas) válidos. O programa é executado via linha de comando, solicita ao usuário a quantidade de CPFs que deseja gerar e os exibe no console.
 
 ## Funcionalidades
