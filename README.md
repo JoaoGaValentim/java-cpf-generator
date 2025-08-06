@@ -1,18 +1,57 @@
-## Getting Started
+# Gerador de CPF
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este é um simples projeto em Java para a geração de números de CPF (Cadastro de Pessoas Físicas) válidos. O programa é executado via linha de comando, solicita ao usuário a quantidade de CPFs que deseja gerar e os exibe no console.
 
-## Folder Structure
+## Funcionalidades
 
-The workspace contains two folders by default, where:
+- Geração de um ou mais números de CPF.
+- Cálculo correto dos dígitos verificadores, garantindo a validade dos números gerados.
+- Formatação do CPF no padrão `XXX.XXX.XXX-XX`.
+- Interface de linha de comando interativa.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Como Executar
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Pré-requisitos
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- Java Development Kit (JDK) instalado e configurado no seu sistema.
 
-## Dependency Management
+### Passos
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+1.  Clone o repositório ou baixe o arquivo `App.java`.
+2.  Abra um terminal ou prompt de comando na pasta onde o arquivo se encontra.
+3.  Compile o código-fonte:
+    ```bash
+    javac App.java
+    ```
+4.  Execute o programa:
+    ```bash
+    java App
+    ```
+5.  Siga as instruções no terminal para informar a quantidade de CPFs a serem gerados. O programa exibirá a lista de CPFs na tela.
+
+    ```
+    =============================
+           GERADOR DE CPF
+    =============================
+    Informe o total de CPFs para ser gerado >>
+    5
+    ====== EXIBINDO CPFs ======
+    XXX.XXX.XXX-XX
+    XXX.XXX.XXX-XX
+    XXX.XXX.XXX-XX
+    XXX.XXX.XXX-XX
+    XXX.XXX.XXX-XX
+    ==========================
+    ```
+
+## Estrutura do Código
+
+O código está contido em um único arquivo, `App.java`, e é dividido em vários métodos estáticos para uma melhor organização:
+
+- `main(String[] args)`: Ponto de entrada do programa. Chama `createFrame()`.
+- `createFrame()`: Controla o fluxo principal da aplicação, interagindo com o usuário e exibindo os resultados.
+- `generateCPF()`: Gera um único número de CPF válido, calculando os dígitos verificadores.
+- `generateCPFList(int totalCPFs)`: Gera uma lista de CPFs com base na quantidade solicitada.
+- `calculateVerifiedDigit(int[] digits, int position)`: Implementa o algoritmo de cálculo para um dos dígitos verificadores do CPF.
+- `formatCpf(int[] digits)`: Formata um array de 11 dígitos no formato de CPF padrão (`XXX.XXX.XXX-XX`).
+- `showHeader()` e `showCPFs(String[] cpfs)`: Métodos auxiliares para exibir informações de forma organizada no console.
