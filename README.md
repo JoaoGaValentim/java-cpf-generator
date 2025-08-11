@@ -27,16 +27,14 @@ Este é um simples projeto em Java para a geração de números de CPF (Cadastro
     ```
 4.  Execute o programa:
     ```bash
-    java App
+    java App 10 # total de cpfs
     ```
-5.  Siga as instruções no terminal para informar a quantidade de CPFs a serem gerados. O programa exibirá a lista de CPFs na tela.
+5.  Veja seus CPFs gerados
 
     ```
     =============================
            GERADOR DE CPF
     =============================
-    Informe o total de CPFs para ser gerado >>
-    5
     ====== EXIBINDO CPFs ======
     XXX.XXX.XXX-XX
     XXX.XXX.XXX-XX
@@ -45,15 +43,3 @@ Este é um simples projeto em Java para a geração de números de CPF (Cadastro
     XXX.XXX.XXX-XX
     ==========================
     ```
-
-## Estrutura do Código
-
-O código está contido em um único arquivo, `App.java`, e é dividido em vários métodos estáticos para uma melhor organização:
-
-- `main(String[] args)`: Ponto de entrada do programa. Chama `createFrame()`.
-- `createFrame()`: Controla o fluxo principal da aplicação, interagindo com o usuário e exibindo os resultados.
-- `generateCPF()`: Gera um único número de CPF válido, calculando os dígitos verificadores.
-- `generateCPFList(int totalCPFs)`: Gera uma lista de CPFs com base na quantidade solicitada.
-- `calculateVerifiedDigit(int[] digits, int position)`: Implementa o algoritmo de cálculo para um dos dígitos verificadores do CPF.
-- `formatCpf(int[] digits)`: Formata um array de 11 dígitos no formato de CPF padrão (`XXX.XXX.XXX-XX`).
-- `showHeader()` e `showCPFs(String[] cpfs)`: Métodos auxiliares para exibir informações de forma organizada no console.
