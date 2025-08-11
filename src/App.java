@@ -22,7 +22,7 @@ public class App {
     static void createFrame(String[] args) {
         showHeader();
         final CPFGenerator cpfGenerator = new CPFGenerator();
-        final int total = Integer.parseInt(args[0]);
+        final int total = Integer.valueOf(args[0]);
         final String[] cpfs = cpfGenerator.getRandomCPFList(total);
         showAllCPFs(cpfs);
     }
