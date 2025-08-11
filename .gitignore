@@ -1,7 +1,7 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,java
-
+.vscode
 ### Java ###
 # Compiled class file
 *.class
@@ -35,7 +35,8 @@ replay_pid*
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*

@@ -1,8 +1,3 @@
-import java.util.Random;
-import java.util.Scanner;
-
-import javax.swing.JOptionPane;
-
 import com.documents.generators.CPFGenerator;
 
 public class App {
@@ -24,18 +19,25 @@ public class App {
         System.out.println(templateData);
     }
 
-    static void createFrame() {
+    static void createFrame(String[] args) {
         showHeader();
-        final Scanner sc = new Scanner(System.in);
-        System.out.println("Informe o total de CPFs para ser gerado >> ");
-        final int totalCPFs = sc.nextInt();
         final CPFGenerator cpfGenerator = new CPFGenerator();
-        final String[] cpfs = cpfGenerator.getRandomCPFList(totalCPFs);
+        final int total = Integer.parseInt(args[0]);
+        final String[] cpfs = cpfGenerator.getRandomCPFList(total);
         showAllCPFs(cpfs);
-        sc.close();
     }
 
     public static void main(String[] args) throws Exception {
-        createFrame();
+        if (args.length == 0) {
+            System.out.println("Informe um valor para total.");
+            return;
+        }
+
+        if (args.length > 1) {
+            System.out.println("Aceitamos somente um argumento para total.");
+            return;
+        }
+
+        createFrame(args);
     }
 }
