@@ -12,14 +12,7 @@ public class App {
         System.out.println("=============================");
     }
 
-    static void createFrame() {
-        showHeader();
-        final Scanner sc = new Scanner(System.in);
-        System.out.println("Informe o total de CPFs para ser gerado >> ");
-        final int totalCPFs = sc.nextInt();
-        final CPFGenerator cpfGenerator = new CPFGenerator();
-        final String[] cpfs = cpfGenerator.getRandomCPFList(totalCPFs);
-
+    static void showAllCPFs(String[] cpfs) {
         String templateData = "=== CPFs Gerados ===\n";
 
         for (String cpf : cpfs) {
@@ -29,6 +22,16 @@ public class App {
         templateData += "==================";
 
         System.out.println(templateData);
+    }
+
+    static void createFrame() {
+        showHeader();
+        final Scanner sc = new Scanner(System.in);
+        System.out.println("Informe o total de CPFs para ser gerado >> ");
+        final int totalCPFs = sc.nextInt();
+        final CPFGenerator cpfGenerator = new CPFGenerator();
+        final String[] cpfs = cpfGenerator.getRandomCPFList(totalCPFs);
+        showAllCPFs(cpfs);
         sc.close();
     }
 
